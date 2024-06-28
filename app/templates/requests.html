@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MiniRequest - All Requests</title>
+</head>
+<body>
+    <h1>All Requests</h1>
+    <ul>
+    {% for request in requests %}
+        <li>
+            <strong>{{ request.item }}</strong> - {{ request.description }} ({{ request.status }})
+            {% if request.status == 'Pending' %}
+                <form action="/approve/{{ request.id }}" method="post" style="display:inline;">
+                    <button type="submit">Approve</button>
+                </form>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
+
