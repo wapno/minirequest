@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MiniRequest - Evaluate Request</title>
+</head>
+<body>
+    <h1>Evaluate Request</h1>
+    <form action="/evaluate/{{ request.id }}" method="post">
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="Approved">Approve</option>
+            <option value="Denied">Deny</option>
+        </select>
+        <br>
+        <label for="reason">Reason:</label>
+        <textarea id="reason" name="reason" required></textarea>
+        <br>
+        <label for="evaluator">Evaluator:</label>
+        <input type="text" id="evaluator" name="evaluator" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
